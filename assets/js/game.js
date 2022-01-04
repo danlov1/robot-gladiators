@@ -1,8 +1,4 @@
-// this creates a function named fight 
-function fight (){
-    window.alert("The fight has begun!");  
-}
-// fight();
+//Player name and health
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10; 
@@ -12,7 +8,7 @@ var playerMoney = 10;
 var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
-
+//fight function  
 var fight = function() {
     window.alert("Welcome to Robot Gladiators!"); 
 //asking player if they want to fight or not  
@@ -30,6 +26,7 @@ if (promptFight === "fight" || promptFight === "FIGHT"){
     else {
         window.alert(enemyName + " still has" + enemyHealth + " health left.");
     }
+    //remove players health
     playerHealth = playerHealth - enemyAttack;
 // Log a resulting message to the console so we know that it worked.
   console.log(enemyName + " attacked " + playerName + ". " + playerHealth + " health remaining.");
@@ -38,7 +35,7 @@ if (promptFight === "fight" || promptFight === "FIGHT"){
     window.alert(playerName + " has died!");
 }
 else{
-    window.alert(playerName + " still has " + playerHealth + " health left.")
+    window.alert(playerName + " still has " + playerHealth + " health left.");
 }
 //if player chooses to skip
 } else if (promptFight === "skip" || promptFight === "SKIP") {
@@ -55,16 +52,10 @@ else{
     else {
         fight();
     }
+    //if player did not choose 1 or 2 in promptFight
+}else {
+    window.alert("you need to pick a valid option. Try again!");
 }
-    //{
-        // window.alert(playerName + " has chosen to skip the fight!");
-// } else {
-//     window.alert("You need to choose a valid option. Try again!");
-// }    
 };
-
-//check to see if the value of the playerHealth variable is greater than 0
-if (playerHealth > 0){
-    console.log("Your player is still alive!");
-}
+//run the fight function
 fight();
